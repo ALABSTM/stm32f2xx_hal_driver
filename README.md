@@ -1,6 +1,7 @@
 # STM32CubeF2 HAL Driver MCU Component
 
 ![latest tag](https://img.shields.io/github/v/tag/STMicroelectronics/stm32f2xx_hal_driver.svg?color=brightgreen)
+![compilation](https://github.com/ALABSTM/stm32f2xx_hal_driver/actions/workflows/ci.yml/badge.svg?event=push)
 
 ## Overview
 
