@@ -12,11 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Compilation
     steps:
-      # Clone the "hal_driver" repository using the "checkout" GH action.
-      - name: Checkout
-        uses: actions/checkout@master
-        with:
-          path: ./Drivers/STM32F2xx_HAL_Driver
       # Clone the "cmsis_core" repository using the "checkout" GH action.
       - name: Checkout
         uses: actions/checkout@master
@@ -29,6 +24,11 @@ jobs:
         with:
           repository: STMicroelectronics/cmsis_device_f2
           path: ./Drivers/CMSIS/Device/ST/STM32F2xx
+      # Clone the "hal_driver" repository using the "checkout" GH action.
+      - name: Checkout
+        uses: actions/checkout@master
+        with:
+          path: ./Drivers/STM32F2xx_HAL_Driver
       # Compile the source files using the "compile" user-defined action.
       - name: Compile
         id: compile
