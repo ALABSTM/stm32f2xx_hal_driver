@@ -35,7 +35,7 @@ jobs:
         uses: ALABSTM/actions/compile@main
         with:
           stm32-series: 'F2'
-          option-list: '-mcpu=cortex-m3 -mthumb -mno-thumb-interwork -mfpu=vfp -msoft-float -mfix-cortex-m3-ldrd'
+          option-list: '-mcpu=cortex-m3 -mfloat-abi=soft'
       # Log compilation result using the output from the "compile" step.
       - name: Log
         if: failure()
