@@ -30,10 +30,17 @@ jobs:
         with:
           repository: STMicroelectronics/stm32f2xx_hal_driver
           path: ./Drivers/STM32F2xx_HAL_Driver
+      # Clone the private "actions" repository using the "checkout" GH action and a private token.
+      - name: Checkout
+        uses: actions/checkout@master
+        with:
+          repository: ALABSTM/actions
+          path: .github/actions
+          token: ${{ secrets.ACTIONS_SECRET }}
       # Compile the source files using the "compile" user-defined action.
       - name: Compile
         id: compile
-        uses: ALABSTM/actions/compile@main
+        uses: ./.github/actions/compile
         with:
           stm32-series: 'F2'
           option-list: '-mcpu=cortex-m3 -mfloat-abi=soft'
