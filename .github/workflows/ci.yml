@@ -36,7 +36,7 @@ jobs:
         with:
           repository: ALABSTM/actions
           path: .github/actions
-          token: ${{ secrets.ACTIONS_SECRET }}
+          # token: ${{ secrets.ACTIONS_SECRET }}
       # Compile the source files using the "compile" user-defined action.
       - name: Compile
         id: compile
